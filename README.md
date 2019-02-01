@@ -7,3 +7,4 @@ Creating my first new webpage!
 * .gitignore
 * index.html
 * package.json (For Node JS)
+* css/styles.css
