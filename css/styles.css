@@ -59,3 +59,14 @@ body{
     left: 0;
     min-height: 300px;
 }
+
+.form-lines
+{
+  padding: 10px 0px 10px 0px;
+}
+
+#carouselButton {
+    right:0px;
+    position: absolute;
+    bottom: 0px;
+}

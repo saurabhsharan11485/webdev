@@ -88,12 +88,66 @@
                 </div>
                 <div class="col-12 col-sm">
                   <a role="button" class="btn btn-block nav-link btn-warning"
-                      data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>"
-                      data-placement="bottom" href="#Reserve">Reserve Table</a>
+                      data-toggle="modal" data-html="true" data-target="#reserveModal">Reserve Table</a>
                 </div>
             </div>
         </div>
     </header>
+
+    <div id="reserveModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" role="content">
+    <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Reserve Table </h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                  <label class="col-3 form-lines">Number of Guests</label>
+                  <div class="col-9 form-lines">
+                    <label class="radio-inline"><input type="radio" name="optradio">  1 </label>
+                    <label class="radio-inline"><input type="radio" name="optradio">  2 </label>
+                    <label class="radio-inline"><input type="radio" name="optradio">  3 </label>
+                    <label class="radio-inline"><input type="radio" name="optradio">  4 </label>
+                    <label class="radio-inline"><input type="radio" name="optradio">  5 </label>
+                    <label class="radio-inline"><input type="radio" name="optradio">  6 </label>
+                  </div>
+                  <label class="col-3 form-lines">Section</label>
+                  <div class="col-9 form-lines">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-success btn-secondary active">
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Non-Smoking
+                      </label>
+                      <label class="btn btn-danger btn-secondary">
+                        <input type="radio" name="options" id="option2" autocomplete="off"> Smoking
+                      </label>
+                    </div>
+                  </div>
+                  <br>
+                  <label class="col-3 form-lines">Date & Time</label>
+                  <div class="col-9 form-lines">
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="Date" name="Date" placeholder="Date">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="Time" name="Time" placeholder="Time">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-3"></div>
+                  <div class="col-9">
+                      <button class="btn btn-default" data-dismiss="modal" type="button">Cancel</button>
+                      <button class="btn btn-primary" type="submit">Reserve</button>
+                  </div>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <div class="container">
       <div class="row row-content">
@@ -142,6 +196,15 @@
               <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
               </a>
+
+              <div class="btn-group" id="carouselButton">
+                    <button class="btn btn-danger btn-sm" id="carousel-pause">
+                	    <span class="fa fa-pause"></span>
+                    </button>
+                    <button class="btn btn-danger btn-sm" id="carousel-play">
+                	    <span class="fa fa-play"></span>
+                    </button>
+                </div>
             </div>
         <!-- <div class="row row-content align-items-center">
             <div class="col-12 col-sm-4 order-sm-last col-md-3">
@@ -198,7 +261,7 @@
           </div>
         </div>
 
-        <div class="row row-content align-items-center justify-content-center">
+        <!-- <div class="row row-content align-items-center justify-content-center">
           <div class="col-12 col-sm-8 col-md-8" id="Reserve">
             <div class="card">
               <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
@@ -232,13 +295,12 @@
                                 <button class="btn btn-warning" type="submit">Reserve</button>
                             </div>
                         </div>
-
                       </form>
                   </dl>
               </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <footer class="footer">
@@ -288,9 +350,20 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script> -->
+    <script>
+        $(document).ready(function(){
+            $("#mycarousel").carousel( { interval: 2000 } );
+            $("#carousel-pause").click(function(){
+                $("#mycarousel").carousel('pause');
+            });
+            $("#carousel-play").click(function(){
+                $("#mycarousel").carousel('cycle');
+            });
         });
     </script>
 
