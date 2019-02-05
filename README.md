@@ -10,3 +10,4 @@ Creating my first new webpage!
 * css/styles.css
 * aboutus.html
 * contactus.html
+* css/styles.scss
